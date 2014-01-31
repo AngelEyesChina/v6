@@ -58,7 +58,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test",
+    "test": "grunt test"
   },
   "description": "Practice Log for Martial Artists.",
   "main": "Gruntfile.js",
