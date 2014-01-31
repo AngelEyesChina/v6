@@ -1,5 +1,5 @@
 {
-  "name": "practicelogv6",
+  "name": "practiceLog",
   "version": "0.0.6",
   "dependencies": {
     "express": "~3.4.3",
