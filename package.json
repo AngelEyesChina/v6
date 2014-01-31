@@ -59,9 +59,8 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "node server.js"
   },
-  "description": "ERROR: No README data found!",
+  "description": "Practice Log for Martial Artists.",
   "main": "Gruntfile.js",
   "directories": {
     "test": "test"
