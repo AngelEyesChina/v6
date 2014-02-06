@@ -7,3 +7,4 @@ heroku
 /views
 dist
 /lib/logs/main.log
+/.idea
