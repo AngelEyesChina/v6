@@ -1,0 +1,30 @@
+{
+    "appenders": [
+        {
+            "type": "file",
+            "filename": "./lib/logs/error.log",
+            "category": "errorLog"
+        },
+        {
+            "type": "file",
+            "filename": "./lib/logs/main.log",
+            "category": "mainLog"
+        },
+        {
+            "type": "file",
+            "filename": "./lib/logs/out.log",
+            "category": "outLog"
+        },
+        {
+            "type": "file",
+            "filename": "./lib/logs/in.log",
+            "category": "inLog"
+        }
+    ],
+    "levels": {
+        "errorLog": "WARN",
+        "mainLog": "DEBUG",
+        "inLog": "INFO",
+        "outLog": "INFO"
+    }
+}
