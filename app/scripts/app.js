@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('practiceLogV6App', [
+angular.module('practiceLogApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -11,6 +11,10 @@ angular.module('practiceLogV6App', [
       .when('/', {
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
+      })
+      .when('/view', {
+        templateUrl: 'partials/view',
+        controller: 'ViewCtrl'
       })
       .otherwise({
         redirectTo: '/'

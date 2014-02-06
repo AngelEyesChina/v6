@@ -1,0 +1,39 @@
+//-
+   TODO: all URIs to some common consts file.
+div.container
+    div.panel.panel-primary
+        div.panel-heading
+            div.row
+                div.col-xs-3.col-md-2
+                    a.btn.btn-primary(ng-click='switchToNewExercisePage()') Add Exercise
+                div.col-xs-3.col-md-2
+                    a.btn.btn-primary(ng-href='{{zoomUpUrl()}}', ng-show="exercise.ID") Up one level
+                div.col-xs-10.col-sm-4.col-md-6
+                    form(role='search')
+                        .input-group
+                            input#srch-term.form-control(type='text', ng-model='search', placeholder='Search', name='srch-term')
+                            .input-group-btn
+                                button.btn.btn-default(type='submit')
+                                    i.glyphicon.glyphicon-search
+        div.panel-body
+            ol.list-group
+                li.list-group-item(ng-repeat="exercise in exercise.children | filter:search")
+                    div.row
+                        div.col-xs-6.col-md-4
+                            | {{exercise.ID}}
+                        div.col-xs-6.col-md-4
+                            div(toggle-switch, model='switchStatus', on-label='Done!', off-label='Not Yet')
+                        div.col-xs-6.col-md-4
+                            a.btn.btn-primary(ng-href='{{drillDownUrl(exercise.ID)}}') Drill Down
+        div.panel-footer
+            div.row
+                div.col-xs-3.col-md-2
+                    a.btn.btn-primary(ng-click='switchToNewExercisePage()') Add Exercise
+                div.col-xs-3.col-md-2
+                    a.btn.btn-primary(ng-href='{{zoomUpUrl()}}', ng-show="exercise.ID") Up one level
+                div.col-xs-4.col-sm-2.col-md-2
+                    h6
+                    | Total Count &nbsp;
+                    span.label.label-info {{exercise.children.length}}
+    p exercise: {{exercise}}
+                    
