@@ -16,6 +16,10 @@ angular.module('practiceLogApp', [
         templateUrl: 'partials/view',
         controller: 'ViewCtrl'
       })
+      .when('/view/:exerciseID', {
+        templateUrl: 'partials/view',
+        controller: 'ViewCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
