@@ -4,7 +4,8 @@ angular.module('practiceLogApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'toggle-switch'
   ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
