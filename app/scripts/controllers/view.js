@@ -1,11 +1,13 @@
 'use strict';
 
+//todo hanan: move to service of type constant
 var consts = {
   url: {
     home: '/view',
-    view: '/view/',
+    view: '/view/{exerciseID}/{displayedDate}',
     new: '/new/parent/'
-  }
+  },
+  rootExerciseID: 'root'
 };
 
 function newExerciseUrl($scope) {
@@ -22,21 +24,41 @@ function setRootDisplay($scope, Exercises) {
   $scope.exercise.children = rootExercises;
 }
 
-function setChildDisplay($scope, Exercises, exerciseID) {
-  $scope.exercise = Exercises.get({exerciseID: exerciseID});
+function setChildDisplay($scope, Exercises) {
+  $scope.exercise = Exercises.get({exerciseID: $scope.exerciseID});
 }
 
-function setDisplay(exerciseID, $scope, Exercises) {
-  if (typeof  exerciseID === 'undefined') {
+function setDisplay($scope, Exercises) {
+  if ($scope.exerciseID === consts.rootExerciseID) {
     setRootDisplay($scope, Exercises);
   } else {
-    setChildDisplay($scope, Exercises, exerciseID);
+    setChildDisplay($scope, Exercises);
   }
 }
 
-function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams) {
-  setDisplay($routeParams.exerciseID, $scope, Exercises);
+function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
+  if (typeof  $routeParams.exerciseID === 'undefined') {
+    $location.path(utils.stringFormat(consts.url.view, {
+      exerciseID: consts.rootExerciseID,
+      displayedDate: $routeParams.displayedDate
+    }));
+    return;
+  }
+  $scope.exerciseID = $routeParams.exerciseID;
+  var dateFromUrl = moment.utc($routeParams.displayedDate, 'YYYY-MM-DD');
+  if (dateFromUrl.isValid()) {
+    $scope.displayedDate = dateFromUrl.format('YYYY-MM-DD');
+  } else {
+    $location.path(utils.stringFormat(consts.url.view, {
+      exerciseID: consts.rootExerciseID,
+      displayedDate: moment.utc().format('YYYY-MM-DD')
+    }));
+  }
+}
 
+function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils) {
+  getParamsOtherwiseRedirect($routeParams, $location, $scope, utils);
+  setDisplay($scope, Exercises);
   $scope.newExerciseUrl = function () {
     newExerciseUrl($scope);
   };
@@ -48,15 +70,19 @@ function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams) {
   };
 
   $scope.zoomUpUrl = function () {
+    var params = {
+      displayedDate: $scope.displayedDate
+    };
     if (typeof  $scope.exercise.parentID === 'undefined') {
-      return consts.url.home;
+      params.exerciseID = consts.rootExerciseID;
     } else {
-      return consts.url.view + $scope.exercise.parentID;
+      params.exerciseID = $scope.exercise.parentID;
     }
+    return utils.stringFormat(consts.url.view, params);
   };
 
   $scope.drillDownUrl = function (exerciseID) {
-    return consts.url.view + exerciseID;
+    return utils.stringFormat(consts.url.view, {exerciseID: exerciseID, displayedDate: $scope.displayedDate });
   };
 }
 

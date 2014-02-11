@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('practiceLogApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
-])
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
+  ])
   .config(function ($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
@@ -16,6 +16,10 @@ angular.module('practiceLogApp', [
         templateUrl: 'partials/view',
         controller: 'ViewCtrl'
       })
+      .when('/view/:exerciseID/:displayedDate', {
+        templateUrl: 'partials/view',
+        controller: 'ViewCtrl'
+      })
       .when('/view/:exerciseID', {
         templateUrl: 'partials/view',
         controller: 'ViewCtrl'
@@ -23,6 +27,6 @@ angular.module('practiceLogApp', [
       .otherwise({
         redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
   });
