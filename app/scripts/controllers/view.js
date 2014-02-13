@@ -41,8 +41,7 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
     $location.path(utils.stringFormat(consts.url.view, {
       exerciseID: consts.rootExerciseID,
       displayedDate: $routeParams.displayedDate
-    }));
-    return;
+    })).replace();
   }
   $scope.exerciseID = $routeParams.exerciseID;
   var dateFromUrl = moment.utc($routeParams.displayedDate, 'YYYY-MM-DD');
@@ -52,7 +51,7 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
     $location.path(utils.stringFormat(consts.url.view, {
       exerciseID: consts.rootExerciseID,
       displayedDate: moment.utc().format('YYYY-MM-DD')
-    }));
+    })).replace();
   }
 }
 
@@ -87,3 +86,4 @@ function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils) {
 }
 
 angular.module('practiceLogApp').controller('ViewCtrl', ViewCtrl);
+
