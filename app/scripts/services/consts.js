@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('practiceLogV6App')
+angular.module('practiceLogApp')
   .constant('consts', {
     url: {
       home: '/view',

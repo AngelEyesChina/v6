@@ -3,7 +3,7 @@
 describe('Service: consts', function () {
 
   // load the service's module
-  beforeEach(module('practiceLogV6App'));
+  beforeEach(module('practiceLogApp'));
 
   // instantiate service
   var consts;
