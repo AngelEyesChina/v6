@@ -2,7 +2,7 @@
 
 angular.module('practiceLogApp')
   .factory('Exercises', ['$resource', function ($resource) {
-    return $resource('/exercises/:exerciseID/',
+    return $resource('/exercises/:exerciseID/date/:displayedDate',
     {
     }, {
         /*loan: {

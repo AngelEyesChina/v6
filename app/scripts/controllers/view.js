@@ -19,13 +19,13 @@ function newExerciseUrl($scope) {
 }
 
 function setRootDisplay($scope, Exercises) {
-  var rootExercises = Exercises.query();
+  var rootExercises = Exercises.query({displayedDate: $scope.displayedDate});
   $scope.exercise = {};
   $scope.exercise.children = rootExercises;
 }
 
 function setChildDisplay($scope, Exercises) {
-  $scope.exercise = Exercises.get({exerciseID: $scope.exerciseID});
+  $scope.exercise = Exercises.get({exerciseID: $scope.exerciseID, displayedDate: $scope.displayedDate});
 }
 
 function setDisplay($scope, Exercises) {
@@ -38,20 +38,22 @@ function setDisplay($scope, Exercises) {
 
 function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
   if (typeof  $routeParams.exerciseID === 'undefined') {
-    $location.path(utils.stringFormat(consts.url.view, {
+    $scope.$apply($location.path(utils.stringFormat(consts.url.view, {
       exerciseID: consts.rootExerciseID,
       displayedDate: $routeParams.displayedDate
-    })).replace();
+    })).replace());
+
   }
   $scope.exerciseID = $routeParams.exerciseID;
   var dateFromUrl = moment.utc($routeParams.displayedDate, 'YYYY-MM-DD');
   if (dateFromUrl.isValid()) {
     $scope.displayedDate = dateFromUrl.format('YYYY-MM-DD');
   } else {
-    $location.path(utils.stringFormat(consts.url.view, {
+    $scope.$apply($location.path(utils.stringFormat(consts.url.view, {
       exerciseID: consts.rootExerciseID,
       displayedDate: moment.utc().format('YYYY-MM-DD')
-    })).replace();
+    })).replace());
+
   }
 }
 
