@@ -1,16 +1,6 @@
 'use strict';
 
-//todo hanan: move to service of type constant
-var consts = {
-  url: {
-    home: '/view',
-    view: '/view/{exerciseID}/{displayedDate}',
-    new: '/new/parent/'
-  },
-  rootExerciseID: 'root'
-};
-
-function newExerciseUrl($scope) {
+function newExerciseUrl($scope, consts) {
   if (typeof $scope !== 'undefined') {
     var IDForUrl = $scope.exercise.ID || '';
     return consts.url.new + IDForUrl;
@@ -28,7 +18,7 @@ function setChildDisplay($scope, Exercises) {
   $scope.exercise = Exercises.get({exerciseID: $scope.exerciseID, displayedDate: $scope.displayedDate});
 }
 
-function setDisplay($scope, Exercises) {
+function setDisplay($scope, Exercises, consts) {
   if ($scope.exerciseID === consts.rootExerciseID) {
     setRootDisplay($scope, Exercises);
   } else {
@@ -36,7 +26,7 @@ function setDisplay($scope, Exercises) {
   }
 }
 
-function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
+function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, consts) {
   if (typeof  $routeParams.exerciseID === 'undefined') {
     $scope.$apply($location.path(utils.stringFormat(consts.url.view, {
       exerciseID: consts.rootExerciseID,
@@ -57,11 +47,11 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils) {
   }
 }
 
-function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils) {
-  getParamsOtherwiseRedirect($routeParams, $location, $scope, utils);
-  setDisplay($scope, Exercises);
+function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils, consts) {
+  getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, consts);
+  setDisplay($scope, Exercises, consts);
   $scope.newExerciseUrl = function () {
-    newExerciseUrl($scope);
+    newExerciseUrl($scope, consts);
   };
 
   $scope.switchToNewExercisePage = function () {
