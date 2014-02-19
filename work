@@ -1,0 +1,22 @@
+currently working on:
+
+    call mark done/undone from client side (use angular's $http)
+
+    when clicking cancel, we get validation msg
+    TODO: move all consts to one file
+    TODO: move all config values to one file
+	TODO: display exercise details (consider a template/Angular directive for all occurrences)
+	TODO: separate controllers into different files
+
+functionality needed in the client:
+
+    phase 1:
+
+        drill down (render) - call render of the child
+        zoom out (render) - call render of the parent
+        mark (as done) (for date)
+        un-mark (as done) (for date)
+        Add exercise
+
+    phase 2:
+        login (http://passportjs.org/guide/authenticate/)
