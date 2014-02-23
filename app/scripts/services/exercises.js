@@ -5,11 +5,11 @@ angular.module('practiceLogApp')
     return $resource('/exercises/:exerciseID/date/:displayedDate',
     {
     }, {
-        /*loan: {
-         method: 'PUT',
-         params: { bookId: '@bookId' },
+        mark: {
+         method: 'POST',
+         params: { id: '@id', date: '@date' },
          isArray: false
          }
-    , method2: { ... } */
+/*    , method2: { ... }*/
     });
   }]);

@@ -7,11 +7,26 @@
 'use strict';
 angular.module('practiceLogApp')
   .factory('apiAccess', ['$resource', function ($resource) {
-    return $resource('/api/v/:version/exercise/:listController:id/:docController',
+    return $resource('/api/v/:version/exercise/:listController:id/:docController/:date/',
       {
         version: 1,
         id: '@id',
         listController: '@listController',
         docController: '@docController'
+      },{
+        markExerciseDone: {
+          method: "POST",
+          params: {
+            docController: "markExerciseDone",
+            date: '@date'
+          }
+        },
+        markExerciseUndone: {
+          method: "POST",
+          params: {
+            docController: "markExerciseUndone",
+            date: '@date'
+          }
+        }
       });
   }]);

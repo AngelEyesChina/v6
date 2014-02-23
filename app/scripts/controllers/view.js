@@ -47,7 +47,7 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, cons
   }
 }
 
-function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils, consts) {
+function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils, consts, apiAccess) {
   getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, consts);
   setDisplay($scope, Exercises, consts);
   $scope.newExerciseUrl = function () {
@@ -74,6 +74,11 @@ function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils, c
 
   $scope.drillDownUrl = function (exerciseID) {
     return utils.stringFormat(consts.url.view, {exerciseID: exerciseID, displayedDate: $scope.displayedDate });
+  };
+
+  $scope.save = function (exercise) {
+    var method = exercise.marked ? apiAccess.markExerciseDone : apiAccess.markExerciseUndone;
+    method({id: exercise.ID, date: $scope.displayedDate});
   };
 }
 

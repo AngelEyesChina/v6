@@ -26,7 +26,10 @@ div.container
                         div.col-xs-6.col-md-4
                             | {{exercise.ID}}
                         div.col-xs-6.col-md-4
-                            div(toggle-switch, model='switchStatus', on-label='Done!', off-label='Not Yet')
+                            div(toggle-switch, knob-label='done?',
+                            model='exercise.marked',
+                            on-label='Done!', off-label='Not Yet'
+                            ng-click='save(exercise);')
                         div.col-xs-6.col-md-4
                             a.btn.btn-primary(ng-href='{{drillDownUrl(exercise.ID)}}') Drill Down
         div.panel-footer
