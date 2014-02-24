@@ -1,6 +1,7 @@
 currently working on:
 
-    call mark done/undone from client side (use angular's $http)
+    fix server side tests (render)
+    finish call mark done/undone from client side (use angular's $http)
 
     when clicking cancel, we get validation msg
     TODO: move all consts to one file

@@ -8,17 +8,20 @@
       {
         "ID": "root1Child2",
         "type": "AND",
+        "parentID": "root1",
         "marked": false,
         "children": []
       },
       {
         "ID": "root1Child1",
         "type": "AND",
+        "parentID": "root1",
         "marked": false,
         "children": [
           {
             "ID": "root1Child1Child1Unmarked",
             "type": "AND",
+            "parentID": "root1Child1",
             "marked": false,
             "children": []
           }
@@ -35,17 +38,20 @@
       {
         "ID": "root2Child1",
         "type": "AND",
+        "parentID": "root2",
         "marked": true,
         "children": [
           {
             "ID": "root2Child1Child2Marked",
             "type": "AND",
+            "parentID": "root2Child1",
             "marked": true,
             "children": []
           },
           {
             "ID": "root2Child1Child1Marked",
             "type": "AND",
+            "parentID": "root2Child1",
             "marked": true,
             "children": []
           }
@@ -54,6 +60,7 @@
       {
         "ID": "root2Child2",
         "type": "AND",
+        "parentID": "root2",
         "marked": false,
         "children": []
       }
