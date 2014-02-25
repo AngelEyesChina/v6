@@ -14,17 +14,31 @@ angular.module('practiceLogApp')
         listController: '@listController',
         docController: '@docController'
       },{
-        markExerciseDone: {
-          method: "POST",
+        get: {
+          method: 'GET',
           params: {
-            docController: "markExerciseDone",
+            docController: 'show'
+          }
+        },
+        getAll: {
+          method: 'GET',
+          isArray: true,
+          params: {
+            listController: 'all'
+
+          }
+        },
+        markExerciseDone: {
+          method: 'POST',
+          params: {
+            docController: 'markExerciseDone',
             date: '@date'
           }
         },
         markExerciseUndone: {
-          method: "POST",
+          method: 'POST',
           params: {
-            docController: "markExerciseUndone",
+            docController: 'markExerciseUndone',
             date: '@date'
           }
         }

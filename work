@@ -1,13 +1,13 @@
 currently working on:
 
-    fix server side tests (render)
-    finish call mark done/undone from client side (use angular's $http)
 
-    when clicking cancel, we get validation msg
     TODO: move all consts to one file
     TODO: move all config values to one file
 	TODO: display exercise details (consider a template/Angular directive for all occurrences)
 	TODO: separate controllers into different files
+	TODO: UUIDs for exercises
+	TODO: eliminate multiple calls
+	TODO: implement caching
 
 functionality needed in the client:
 

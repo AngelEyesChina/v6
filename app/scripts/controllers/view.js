@@ -8,21 +8,21 @@ function newExerciseUrl($scope, consts) {
   return null;
 }
 
-function setRootDisplay($scope, Exercises) {
-  var rootExercises = Exercises.query({displayedDate: $scope.displayedDate});
+function setRootDisplay($scope, apiAccess) {
+  var rootExercises = apiAccess.getAll({date: $scope.displayedDate});
   $scope.exercise = {};
   $scope.exercise.children = rootExercises;
 }
 
-function setChildDisplay($scope, Exercises) {
-  $scope.exercise = Exercises.get({exerciseID: $scope.exerciseID, displayedDate: $scope.displayedDate});
+function setChildDisplay($scope, apiAccess) {
+  $scope.exercise = apiAccess.get({id: $scope.exerciseID, date: $scope.displayedDate});
 }
 
-function setDisplay($scope, Exercises, consts) {
+function setDisplay($scope, apiAccess, consts) {
   if ($scope.exerciseID === consts.rootExerciseID) {
-    setRootDisplay($scope, Exercises);
+    setRootDisplay($scope, apiAccess);
   } else {
-    setChildDisplay($scope, Exercises);
+    setChildDisplay($scope, apiAccess);
   }
 }
 
@@ -47,9 +47,9 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, cons
   }
 }
 
-function ViewCtrl($scope, Exercises, $location, $timeout, $routeParams, utils, consts, apiAccess) {
+function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiAccess) {
   getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, consts);
-  setDisplay($scope, Exercises, consts);
+  setDisplay($scope, apiAccess, consts);
   $scope.newExerciseUrl = function () {
     newExerciseUrl($scope, consts);
   };
