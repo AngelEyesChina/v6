@@ -1,12 +1,10 @@
 currently working on:
 
-
-    TODO: move all consts to one file
-    TODO: move all config values to one file
-	TODO: display exercise details (consider a template/Angular directive for all occurrences)
-	TODO: separate controllers into different files
+    TODO: retrieve last date before the requested date, with the API
 	TODO: UUIDs for exercises
 	TODO: eliminate multiple calls
+    TODO: move all consts to one file
+    TODO: move all config values to one file
 	TODO: implement caching
 
 functionality needed in the client:

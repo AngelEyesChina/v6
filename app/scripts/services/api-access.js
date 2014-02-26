@@ -41,6 +41,12 @@ angular.module('practiceLogApp')
             docController: 'markExerciseUndone',
             date: '@date'
           }
+        },
+        save:{
+          method: 'POST',
+          params: {
+            listController: 'new'
+          }
         }
       });
   }]);

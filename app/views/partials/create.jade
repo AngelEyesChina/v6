@@ -1,0 +1,18 @@
+h4 Adding a New Exercise
+form(role='form')
+    .form-group
+        label.sr-only(for='exerciseID') Exercise ID
+        input#exerciseID.form-control(type='text', placeholder='Enter Exercise ID', ng-model='exercise.exerciseID', required='required')
+        span.help-inline(ng-show='myForm.name.$error.required')
+            | Required
+        .radio
+            label
+                input#optionsRadios1(type='radio', name='newExerciseType', value='AND', checked=gender=='AND', ng-model='exercise.type')
+                | AND
+        .radio
+            label
+                input#optionsRadios2(type='radio', name='newExerciseType', value='OR', checked=gender=='OR', ng-model='exercise.type')
+                | OR
+        button.btn.btn-primary(ng-click='save()', ng-disabled='myForm.$invalid') Add
+        button.btn.default(href='#/', back-button) Cancel
+p {{exercises}}

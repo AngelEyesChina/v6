@@ -48,6 +48,14 @@ angular.module('practiceLogApp', [
         templateUrl: 'partials/view',
         controller: 'ViewCtrl'
       })
+      .when('/create', {
+        templateUrl: 'partials/create',
+        controller: 'CreateCtrl'
+      })
+      .when('/create/:parentID', {
+        templateUrl: 'partials/create',
+        controller: 'CreateCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -56,7 +56,7 @@ function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiA
 
   $scope.switchToNewExercisePage = function () {
     $timeout(function () {
-      $location.path(newExerciseUrl($scope));
+      $location.path(newExerciseUrl($scope, consts));
     });
   };
 
