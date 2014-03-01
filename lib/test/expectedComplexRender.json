@@ -4,12 +4,14 @@
     "type": "AND",
     "parentID": null,
     "marked": false,
+    "lastNDates": [],
     "children": [
       {
         "ID": "root1Child2",
         "type": "AND",
         "parentID": "root1",
         "marked": false,
+        "lastNDates": [],
         "children": []
       },
       {
@@ -17,12 +19,14 @@
         "type": "AND",
         "parentID": "root1",
         "marked": false,
+        "lastNDates": [],
         "children": [
           {
             "ID": "root1Child1Child1Unmarked",
             "type": "AND",
             "parentID": "root1Child1",
             "marked": false,
+            "lastNDates": [],
             "children": []
           }
         ]
@@ -34,18 +38,25 @@
     "type": "AND",
     "parentID": null,
     "marked": false,
+    "lastNDates": [],
     "children": [
       {
         "ID": "root2Child1",
         "type": "AND",
         "parentID": "root2",
         "marked": true,
+        "lastNDates": [
+          "1976-12-10T00:00:00.000Z"
+        ],
         "children": [
           {
             "ID": "root2Child1Child2Marked",
             "type": "AND",
             "parentID": "root2Child1",
             "marked": true,
+            "lastNDates": [
+              "1976-12-10T00:00:00.000Z"
+            ],
             "children": []
           },
           {
@@ -53,6 +64,9 @@
             "type": "AND",
             "parentID": "root2Child1",
             "marked": true,
+            "lastNDates": [
+              "1976-12-10T00:00:00.000Z"
+            ],
             "children": []
           }
         ]
@@ -62,6 +76,7 @@
         "type": "AND",
         "parentID": "root2",
         "marked": false,
+        "lastNDates": [],
         "children": []
       }
     ]

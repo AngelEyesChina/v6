@@ -25,12 +25,14 @@ div.container
                     div.row
                         div.col-xs-6.col-md-4
                             | {{exercise.ID}}
-                        div.col-xs-6.col-md-4
+                        div.col-xs-3.col-md-2
                             div(toggle-switch, knob-label='done?',
                             model='exercise.marked',
                             on-label='Done!', off-label='Not Yet'
                             ng-click='save(exercise);')
-                        div.col-xs-6.col-md-4
+                        div.col-xs-3.col-md-2
+                            | {{exercise.lastNDates[0].from}}
+                        div.col-xs-3.col-md-2
                             a.btn.btn-primary(ng-href='{{drillDownUrl(exercise.ID)}}') Drill Down
         div.panel-footer
             div.row
