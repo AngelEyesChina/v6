@@ -80,6 +80,13 @@ function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiA
     var method = exercise.marked ? apiAccess.markExerciseDone : apiAccess.markExerciseUndone;
     method({id: exercise.ID, date: $scope.displayedDate});
   };
+
+  $scope.dateRelativeToDisplayedDate = function (date) {
+    if(date){
+      return moment(date).from($scope.displayedDate);
+    }
+    return null;
+  };
 }
 
 angular.module('practiceLogApp').controller('ViewCtrl', ViewCtrl);

@@ -1,6 +1,5 @@
 currently working on:
 
-    TODO: display the last date ("x days ago) with every exercise
 	TODO: Create Auto Exercise ID ( UUID) and add exercise 'title'
 	TODO: add "Display Order" field. (which exercise to display first, which last, within the parent exercise)
 	TODO: UUIDs for exercises

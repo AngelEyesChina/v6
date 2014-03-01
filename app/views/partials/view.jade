@@ -31,7 +31,7 @@ div.container
                             on-label='Done!', off-label='Not Yet'
                             ng-click='save(exercise);')
                         div.col-xs-3.col-md-2
-                            | {{exercise.lastNDates[0].from}}
+                            | {{dateRelativeToDisplayedDate(exercise.lastNDates[0])}}
                         div.col-xs-3.col-md-2
                             a.btn.btn-primary(ng-href='{{drillDownUrl(exercise.ID)}}') Drill Down
         div.panel-footer
