@@ -17,7 +17,8 @@ angular.module('practiceLogApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'toggle-switch'
+    'toggle-switch',
+    'angularSpinner'
   ])
   .config(function ($provide, $routeProvider, $locationProvider, consts) {
     $provide.factory('utils', function () {

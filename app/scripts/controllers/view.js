@@ -47,6 +47,7 @@ function getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, cons
   }
 }
 
+
 function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiAccess) {
   getParamsOtherwiseRedirect($routeParams, $location, $scope, utils, consts);
   setDisplay($scope, apiAccess, consts);
@@ -82,10 +83,17 @@ function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiA
   };
 
   $scope.dateRelativeToDisplayedDate = function (date) {
-    if(date){
-      return moment(date).from($scope.displayedDate);
+    if (date) {
+      return moment.utc(date).from($scope.displayedDate);
     }
     return null;
+  };
+
+  $scope.doneInLastNDays = function _doneInLastNDays(exercise, n) {
+    if (exercise.lastNDates.length === 0) return false;
+    var lastDoneDate = moment.utc(exercise.lastNDates[0]);
+    var dd = moment.utc($scope.displayedDate);
+    return lastDoneDate.diff(dd, 'days') < n;
   };
 }
 

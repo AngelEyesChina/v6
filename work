@@ -1,8 +1,11 @@
 currently working on:
 
+title id
+directives for cycle
+tests for directives
+spinner in place of the data displayed (show spinner = !data)
 	TODO: Create Auto Exercise ID ( UUID) and add exercise 'title'
 	TODO: add "Display Order" field. (which exercise to display first, which last, within the parent exercise)
-	TODO: UUIDs for exercises
 	TODO: Hanan: remove findDate function and just use findLastNDates
 	TODO: eliminate multiple calls
     TODO: move all consts to one file
