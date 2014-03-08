@@ -1,27 +1,23 @@
 currently working on:
 
-title id
+
 directives for cycle
 tests for directives
-spinner in place of the data displayed (show spinner = !data)
-	TODO: Create Auto Exercise ID ( UUID) and add exercise 'title'
+    TODO: add user "layer" - users should be able to have more than one tree
+        add tree auto-ID
+    TODO: include and use font-awsome
 	TODO: add "Display Order" field. (which exercise to display first, which last, within the parent exercise)
 	TODO: Hanan: remove findDate function and just use findLastNDates
 	TODO: eliminate multiple calls
+	    check out http://michalostruszka.pl/blog/2013/07/31/double-requests/
     TODO: move all consts to one file
     TODO: move all config values to one file
 	TODO: implement caching
-    check out http://michalostruszka.pl/blog/2013/07/31/double-requests/
     check out http://michalostruszka.pl/blog/2013/09/06/selective_http_errors_handling_in_angularjs/
+
+
 functionality needed in the client:
-
-    phase 1:
-
-        drill down (render) - call render of the child
-        zoom out (render) - call render of the parent
-        mark (as done) (for date)
-        un-mark (as done) (for date)
-        Add exercise
 
     phase 2:
         login (http://passportjs.org/guide/authenticate/)
+        help tooltips / into / walk through
