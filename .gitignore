@@ -8,3 +8,9 @@ heroku
 dist
 /lib/logs/main.log
 /.idea
+/.idea/.name
+/.idea/encodings.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/scopes/scope_settings.xml
+/.idea/vcs.xml
