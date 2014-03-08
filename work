@@ -11,8 +11,8 @@ spinner in place of the data displayed (show spinner = !data)
     TODO: move all consts to one file
     TODO: move all config values to one file
 	TODO: implement caching
-
-
+    check out http://michalostruszka.pl/blog/2013/07/31/double-requests/
+    check out http://michalostruszka.pl/blog/2013/09/06/selective_http_errors_handling_in_angularjs/
 functionality needed in the client:
 
     phase 1:
