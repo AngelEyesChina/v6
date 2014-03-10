@@ -8,9 +8,11 @@ div(ng-include='\'partials/navbar\'')
     <img src="images/PracticeLog.gif" alt="Practice Log" />
     br
     | Welcome to your Practice Log.
+    | Login with:
   p
-    a.btn.btn-lg.btn-success(ng-href='#') Splendid!
-    
+    a.btn.btn-danger(href='/auth/google',  target="_self")
+        span.fa.fa-google-plus Google
+
 .row.marketing
   div
     h4 there used to be an ng-repeat here
