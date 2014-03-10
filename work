@@ -21,3 +21,10 @@ functionality needed in the client:
     phase 2:
         login (http://passportjs.org/guide/authenticate/)
         help tooltips / into / walk through
+
+		user:<username>
+		usertrees:<username> {set of tree IDs}
+		tree:<tree-id>
+
+		
+		
