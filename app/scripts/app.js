@@ -58,7 +58,7 @@ angular.module('practiceLogApp', [
         controller: 'CreateCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/auth/'
       });
 
     $locationProvider.html5Mode(true);
