@@ -1,6 +1,5 @@
 currently working on:
-
-    continue: user is saved with a correct  key but a value of: [object Object]
+    decide on url structure and returning 401 vs. redirecting to login page
 
 directives for cycle
 tests for directives
