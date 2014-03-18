@@ -1,8 +1,9 @@
 currently working on:
-    decide on url structure and returning 401 vs. redirecting to login page
+    decide on url structure and returning 401 vs. redirecting to login page: consider http://www.frederiknakstad.com/2013/08/04/authentication-in-single-page-applications-with-angular-js-part-2/
 
 directives for cycle
 tests for directives
+
     TODO: add user "layer" - users should be able to have more than one tree
         add tree auto-ID
     TODO: replace underscore with lodash and use the latter exclusively

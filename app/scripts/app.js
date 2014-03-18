@@ -18,7 +18,8 @@ angular.module('practiceLogApp', [
     'ngSanitize',
     'ngRoute',
     'toggle-switch',
-    'angularSpinner'
+    'angularSpinner',
+    'notificationWidget'
   ])
   .config(function ($provide, $routeProvider, $locationProvider, consts) {
     $provide.factory('utils', function () {
