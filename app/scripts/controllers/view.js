@@ -93,7 +93,7 @@ function ViewCtrl($scope, $location, $timeout, $routeParams, utils, consts, apiA
     if (exercise.lastNDates.length === 0) return false;
     var lastDoneDate = moment.utc(exercise.lastNDates[0]);
     var dd = moment.utc($scope.displayedDate);
-    return lastDoneDate.diff(dd, 'days') < n;
+    return lastDoneDate.diff(dd, 'days') >= -1 * n;
   };
 }
 
