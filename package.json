@@ -7,7 +7,7 @@
     "jade": "latest",
     "async": "0.2.9",
     "log4js": "0.6.9",
-    "moment": "2.3.1",
+    "moment": ">=2.29.2",    
     "redis": "0.8.4",
     "underscore": "1.5.2",
     "shortid": "~2.0.0",
